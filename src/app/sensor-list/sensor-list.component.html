@@ -1,0 +1,7 @@
+<ul>
+  <li *ngFor="let sensor of sensors | async">
+    <p
+      >Name: <a routerLink="/sensor/{{sensor.id}}">{{sensor.name}}</a>
+    </p>
+  </li>
+</ul>

@@ -101,3 +101,4 @@ typings/
 # next.js build output
 .next
 >>>>>>> 47bce55a9452a36cb87b2caf70d569652730e8a6
+src/environments/config.js

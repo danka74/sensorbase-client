@@ -1,0 +1,13 @@
+<div *ngIf="authService.isLoggedIn(); else login">
+  <button type="button" class="btn btn-block" (click)="authService.logout()">
+    <i class="fa" aria-hidden="true"></i>
+    Logout
+  </button>
+</div>
+
+<ng-template #login>
+  <button type="button" class="btn btn-block" (click)="authService.signInWithGoogle()">
+    <i class="fa fa-google" aria-hidden="true"></i>
+      Login with Google
+  </button>
+</ng-template>
