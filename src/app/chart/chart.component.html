@@ -1,5 +1,6 @@
 <mat-card>
   <mat-card-header>
+    <div mat-card-avatar style="background: url('{{(quantity | async)?.icon}}'); background-size: cover;"></div>
     <mat-card-title>{{(quantity | async)?.name}}</mat-card-title>
     <mat-card-subtitle>{{(sensor | async)?.name}}</mat-card-subtitle>
   </mat-card-header>
@@ -14,4 +15,3 @@
     <button mat-button (click)="deleteDisplayItem()">REMOVE</button>
   </mat-card-actions>
 </mat-card>
-

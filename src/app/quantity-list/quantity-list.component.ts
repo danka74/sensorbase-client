@@ -8,6 +8,7 @@ export class Quantity {
   id: string;
   name: string;
   unit: string;
+  icon: string;
 }
 
 @Component({

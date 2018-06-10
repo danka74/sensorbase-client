@@ -1,3 +1,4 @@
+<div flex>
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav
     #drawer
@@ -28,8 +29,9 @@
       <span class="example-fill-remaining-space"></span>
       <span>{{authService.userDetails.displayName}}</span>
     </mat-toolbar>
-    <div class="sidenav-content" fxLayout="row wrap" fxLayout.xs="column" fxFlexFill>
+    <div class="sidenav-content" flex fxLayout="row wrap" fxLayout.xs="column" fxFlexFill>
       <router-outlet></router-outlet>
     </div>
   </mat-sidenav-content>
 </mat-sidenav-container>
+</div>

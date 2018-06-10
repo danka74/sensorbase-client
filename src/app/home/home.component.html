@@ -1,3 +1,1 @@
-<div *ngFor="let displayItem of displayItems | async" >
-    <app-chart sensorId="{{displayItem.sensor}}" quantityId="{{displayItem.quantity}}"></app-chart>
-</div>
+<app-chart *ngFor="let displayItem of displayItems | async"  sensorId="{{displayItem.sensor}}" quantityId="{{displayItem.quantity}}"></app-chart>
