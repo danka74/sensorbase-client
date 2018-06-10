@@ -1,0 +1,12 @@
+<mat-list>
+  <mat-list-item  *ngFor="let quantity of quantities | async">
+      <button *ngIf="(isDisplayed(quantity.id) | async) ; else removeButton" mat-button (click)="deleteQuantity(quantity.id)" >REMOVE</button>
+      <ng-template #removeButton>
+        <button mat-button (click)="addQuantity(quantity.id)" >ADD</button>
+      </ng-template>
+      {{quantity.name}}
+  </mat-list-item>
+</mat-list>
+
+
+

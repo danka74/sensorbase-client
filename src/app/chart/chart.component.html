@@ -1,0 +1,17 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{(quantity | async)?.name}}</mat-card-title>
+    <mat-card-subtitle>{{(sensor | async)?.name}}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+      <div style="min-height: 400px; max-height: 400px">
+      <ngx-charts-line-chart [results]="chartData" [view]="view" xAxis="true" yAxis="true"
+        yAxisLabel="{{(quantity | async)?.unit}}" showYAxisLabel="true" timeline="true" autoScale="false" gradient="true">
+      </ngx-charts-line-chart>
+      </div>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button (click)="deleteDisplayItem()">REMOVE</button>
+  </mat-card-actions>
+</mat-card>
+

@@ -3,9 +3,10 @@ import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/l
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { LoginComponent } from '../login/login.component';
+import { AuthService } from '../auth.service';
 
 @Component({
-  selector: 'my-nav',
+  selector: 'app-my-nav',
   templateUrl: './my-nav.component.html',
   styleUrls: ['./my-nav.component.css']
 })
@@ -16,6 +17,6 @@ export class MyNavComponent {
       map(result => result.matches)
     );
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  constructor(public authService: AuthService, private breakpointObserver: BreakpointObserver) {}
 
   }

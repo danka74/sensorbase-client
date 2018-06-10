@@ -4,9 +4,11 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { MyNavComponent } from './my-nav/my-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
+import { MatToolbarModule, MatButtonModule, MatSidenavModule,
+  MatIconModule, MatListModule, MatCardModule } from '@angular/material';
 import { SensorListComponent } from './sensor-list/sensor-list.component';
 import { EffectuatorListComponent } from './effectuator-list/effectuator-list.component';
 import { AdminComponent } from './admin/admin.component';
@@ -17,9 +19,12 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environments/environment';
 import { LoginComponent } from './login/login.component';
 import { AuthService } from './auth.service';
-import { SensorComponent } from './sensor/sensor.component';
 
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { QuantityListComponent } from './quantity-list/quantity-list.component';
+import { DisplayService } from './display.service';
+import { ChartComponent } from './chart/chart.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -29,20 +34,27 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
     EffectuatorListComponent,
     AdminComponent,
     LoginComponent,
-    SensorComponent
+    QuantityListComponent,
+    ChartComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    FlexLayoutModule,
     AngularFireModule.initializeApp(environment.firebase, 'sensorbase'),
     AngularFireAuthModule,
     AngularFirestoreModule,
     LayoutModule,
     NgxChartsModule,
-    MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule
+    MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatCardModule
   ],
-  providers: [AuthService],
+  providers: [AuthService, DisplayService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor () {
+    console.log(environment);
+  }
+}

@@ -1,8 +1,10 @@
 <div *ngIf="authService.isLoggedIn(); else login">
+  <h1>Logged in as {{authService.userDetails.displayName}}</h1>
   <button type="button" class="btn btn-block" (click)="authService.logout()">
     <i class="fa" aria-hidden="true"></i>
     Logout
   </button>
+  <!-- <p>User: {{authService.userDetails | json}}</p> -->
 </div>
 
 <ng-template #login>

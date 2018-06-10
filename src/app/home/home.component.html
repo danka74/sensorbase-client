@@ -1,0 +1,3 @@
+<div *ngFor="let displayItem of displayItems | async" >
+    <app-chart sensorId="{{displayItem.sensor}}" quantityId="{{displayItem.quantity}}"></app-chart>
+</div>
